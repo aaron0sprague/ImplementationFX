@@ -1,1 +1,1 @@
-java -cp mysql-connector-java-5.1.7-bin.jar;classes;. ATM //shain
+java -cp mysql-connector-java-5.1.7-bin.jar;classes;. ATM
