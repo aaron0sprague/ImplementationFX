@@ -1,7 +1,8 @@
 package model;
 
 public class BookCollection {
-    
 
-    bookList = new Vector(); //new Vector<Book>();
+    public BookCollection() {
+        bookList = new Vector(); //new Vector<Book>();
+    }
 }

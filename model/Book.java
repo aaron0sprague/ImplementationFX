@@ -9,6 +9,15 @@ public class Book {
         char title 0;
 
     }
+    public Book(String bookId)
+            throws InvalidPrimaryKeyException {
+        super(myTableName);
+
+        setDependencies();
+        String query = String.format("SELECT * FROM %s WHERE (bookId = %s)",
+                myTableName, bookId);
+
+        Vector<Properties> allDataRetrieved = getSelectQueryResult(query);
     public static int bookID(int id){
         
         return id;
