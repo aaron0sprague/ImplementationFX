@@ -6,7 +6,7 @@ public class Book {
      */
     public static void main(String []args){
         Integer id = 0;
-        char title 0;
+        char title;
 
     }
     public static int bookID(int id){
