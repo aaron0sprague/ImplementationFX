@@ -9,19 +9,24 @@ public class Book {
         char title 0;
 
     }
-    public static bookID(int id){
-
+    public static int bookID(int id){
+        
+        return id;
     }   
-    public static bookTitle(char title){
-
+    public static char bookTitle(char title){
+        
+        return title;
     } 
-    public static author(char auth){
-
+    public static char author(char auth){
+        
+        return auth;
     }
-    public static pubYear(char year){
-
+    public static char pubYear(char year){
+       
+        return year;
     }
-    public static status(char stat){
-
+    public static char status(char stat){
+        
+        return stat;
     }
 }
