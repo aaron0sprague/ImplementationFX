@@ -19,7 +19,6 @@ import java.util.Vector;
 //==============================================================
 public class BookCollection extends EntityBase implements IView {
     private static final String myTableName = "Book";
-    private static final String queryTemplate = "SELECT * FROM " + myTableName + " WHERE ";
 
     private Vector<Book> bookList;
 
@@ -80,26 +79,7 @@ public class BookCollection extends EntityBase implements IView {
 
         myRegistry.setDependencies(dependencies);
     }
-    protected void createAndShowBookCollectionView() {
-        Scene currentScene = myViews.get("BookCollectionView");
-
-        if (currentScene == null) {
-            // create our initial view
-            View newView = ViewFactory.createView("BookCollectionView", this); // USE VIEW FACTORY
-            currentScene = new Scene(newView);
-            myViews.put("BookCollectionView", currentScene);
-        }
-
-        swapToView(currentScene);
-
-    }
-    public Object getState(String key) {
-        if (key.equals("books"))
-            return bookList;
-        else if (key.equals("bookList"))
-            return this;
-        return null;
-    }
+    
 
     public void stateChangeRequest(String key, Object value) {
 
@@ -119,4 +99,4 @@ public class BookCollection extends EntityBase implements IView {
         }
     }
 } 
-}
+
