@@ -1,47 +1,5 @@
+
 package model;
-
-public class Book {
-    /**
-     * @param args
-     */
-    public static void main(String []args){
-        Integer id = 0;
-        char title;
-
-    }
-    public Book(String bookId)
-            throws InvalidPrimaryKeyException {
-        super(myTableName);
-
-        setDependencies();
-        String query = String.format("SELECT * FROM %s WHERE (bookId = %s)",
-                myTableName, bookId);
-
-        Vector<Properties> allDataRetrieved = getSelectQueryResult(query);
-    public static int bookID(int id){
-        
-        return id;
-    }   
-    public static char bookTitle(char title){
-        
-        return title;
-    } 
-    public static char author(char auth){
-        
-        return auth;
-    }
-    public static char pubYear(char year){
-       
-        return year;
-    }
-    public static char status(char stat){
-        
-        return stat;
-    }
-    // specify the package
-package model;
-
-// system imports
 
 import exception.InvalidPrimaryKeyException;
 import impresario.IView;
@@ -54,22 +12,12 @@ import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Vector;
 
-// project imports
-
-/**
- * The class containing the Book for the ATM application
- */
-//==============================================================
 public class Book extends EntityBase implements IView {
     private static final String myTableName = "Book";
     public String[] fields = {"author", "title", "pubYear", "status"};
 
-    // GUI Components
-    private String updateStatusMessage = "";
-
-    // constructor for this class
-    public Book(String bookId)
-            throws InvalidPrimaryKeyException {
+    // constructor
+    public Book(String bookId) throws InvalidPrimaryKeyException {
         super(myTableName);
 
         setDependencies();
@@ -86,7 +34,7 @@ public class Book extends EntityBase implements IView {
             if (size != 1) {
                 throw new InvalidPrimaryKeyException("Multiple books matching id : "
                         + bookId + " found.");
-            } else {
+            } else 
                 // copy all the retrieved data into persistent state
                 Properties retrievedBookData = allDataRetrieved.elementAt(0);
                 persistentState = new Properties();
@@ -103,15 +51,11 @@ public class Book extends EntityBase implements IView {
 
             }
         }
-        // If no book found for this user name, throw an exception
         else {
             throw new InvalidPrimaryKeyException("No book matching id : "
                     + bookId + " found.");
         }
     }
-
-    // Can also be used to create a NEW Book (if the system it is part of
-    // allows for a new book to be set up)
     public Book(Properties bookInfo) {
         super(myTableName);
 
@@ -127,7 +71,6 @@ public class Book extends EntityBase implements IView {
             }
         }
     }
-
     public Book() {
         super(myTableName);
         setDependencies();
@@ -156,18 +99,12 @@ public class Book extends EntityBase implements IView {
 
         myRegistry.updateSubscribers(key, this);
     }
-
-    /**
-     * Called via the IView relationship
-     */
     public void updateState(String key, Object value) {
         stateChangeRequest(key, value);
     }
-
     public void update() {
         updateStateInDatabase();
     }
-
     private void updateStateInDatabase() {
         try {
             if (persistentState.getProperty("bookId") != null) {
@@ -213,10 +150,6 @@ public class Book extends EntityBase implements IView {
         }
         updateStateInDatabase();
     }
-
-    /**
-     * This method is needed solely to enable the Book information to be displayable in a table
-     */
     public Vector<String> getEntryListView() {
         Vector<String> v = new Vector<>();
 
@@ -234,7 +167,4 @@ public class Book extends EntityBase implements IView {
             mySchema = getSchemaInfo(tableName);
         }
     }
-}
-
-
 }
