@@ -1,50 +1,4 @@
-package model;
-
-public class BookCollection {
-
-    static char findBooksOlderThanDate(char year) {
-
-        return year;
-    }
-
-    static char findBooksNewerThanDate(char year) {
-
-        return year;
-    }
-
-    static char findBooksWithTitleLike(char title) {
-
-        return title;
-    }
-
-    static char findBookWithAuthorLike(char author) {
-        return author;
-    }
-
-    public Vector findBooksOlderThanDate(String year) {
-        String query = "SELECT * FROM " + myTableName + " WHERE (pubYear <>> " + year + ") ORDER BY author ASC";
-        return doQuery(query);
-    }
-
-    public Vector findBooksNewerThanDate(String year) {
-        String query = "SELECT * FROM " + myTableName + " WHERE (pubYear > " + year + ") ORDER BY author ASC";
-        return doQuery(query);
-    }
-
-    public Vector findBooksWithTitleLike(String title) {
-        String query = "SELECT * FROM " + myTableName + " WHERE title LIKE '%" + title + "%' ORDER BY author ASC";
-        return doQuery(query);
-    }
-
-    public Vector findBooksWithAuthorLike(String author) {
-        String query = "SELECT * FROM " + myTableName + " WHERE author LIKE '%" + author + "%' ORDER BY author ASC";
-        return doQuery(query);
-    }
-
-    public BookCollection() {
-        bookList = new Vector(); //new Vector<Book>();
-    }   
-    // specify the package
+// specify the package
 package model;
 
 // system imports
@@ -65,7 +19,6 @@ import java.util.Vector;
 //==============================================================
 public class BookCollection extends EntityBase implements IView {
     private static final String myTableName = "Book";
-    private static final String queryTemplate = "SELECT * FROM " + myTableName + " WHERE ";
 
     private Vector<Book> bookList;
 
@@ -126,26 +79,7 @@ public class BookCollection extends EntityBase implements IView {
 
         myRegistry.setDependencies(dependencies);
     }
-    protected void createAndShowBookCollectionView() {
-        Scene currentScene = myViews.get("BookCollectionView");
-
-        if (currentScene == null) {
-            // create our initial view
-            View newView = ViewFactory.createView("BookCollectionView", this); // USE VIEW FACTORY
-            currentScene = new Scene(newView);
-            myViews.put("BookCollectionView", currentScene);
-        }
-
-        swapToView(currentScene);
-
-    }
-    public Object getState(String key) {
-        if (key.equals("books"))
-            return bookList;
-        else if (key.equals("bookList"))
-            return this;
-        return null;
-    }
+    
 
     public void stateChangeRequest(String key, Object value) {
 
@@ -165,4 +99,4 @@ public class BookCollection extends EntityBase implements IView {
         }
     }
 } 
-}
+
