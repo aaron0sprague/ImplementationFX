@@ -134,8 +134,6 @@ public class Book extends EntityBase implements IView {
         // create our new view
         View newView = ViewFactory.createView("BookView", this);
 
-        // make the view visible by installing it into the frame
-        swapToView(newScene);
     }
 
     private void processNewBook(Properties bookInfo) {
