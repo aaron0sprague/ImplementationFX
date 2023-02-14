@@ -11,17 +11,9 @@ public class Assign1 {
     private static Scanner scan = new Scanner(System.in).useDelimiter("(\\n)");
 
     public static void main(String args[]) {
-        initialPrompt();
         mainMenu();
     }
 
-    private static void initialPrompt() {
-        System.out.println("+==========================================+");
-        System.out.println("| CSC 429 - Assignment 1 - Pair Programming |");
-        System.out.println("| Authors: Cholla Grygotis & Erik Nystrom  |");
-        System.out.println("+==========================================+");
-        System.out.println("+==========================================+");
-    }
 
     private static void mainMenu() {
         System.out.println("+==========================================+");
