@@ -3,8 +3,8 @@ package model;
 
 import exception.InvalidPrimaryKeyException;
 import impresario.IView;
-import javafx.scene.Scene;
-import userinterface.View;
+// import javafx.scene.Scene;
+// import userinterface.View;
 import userinterface.ViewFactory;
 
 import java.sql.SQLException;
@@ -131,7 +131,7 @@ public class Book extends EntityBase implements IView {
     }
     protected void createAndShowBookView()
     {
-        // create our new view
+/*         // create our new view
         View newView = ViewFactory.createView("BookView", this);
 
     }
@@ -148,7 +148,7 @@ public class Book extends EntityBase implements IView {
             }
         }
         updateStateInDatabase();
-    }
+ */    }
     public Vector<String> getEntryListView() {
         Vector<String> v = new Vector<>();
 
