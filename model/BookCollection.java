@@ -4,7 +4,7 @@ package model;
 // system imports
 
 import impresario.IView;
-import javafx.scene.Scene;
+// import javafx.scene.Scene;
 import userinterface.View;
 import userinterface.ViewFactory;
 
