@@ -201,7 +201,7 @@ public class Patron extends EntityBase implements IView
 		}
 	}
 public void displayCollection(){
-	
+	System.out.println(toString);
 }
 public String toString()
 {
