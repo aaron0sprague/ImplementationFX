@@ -98,4 +98,9 @@ public class PatronCollection extends EntityBase implements IView
 			mySchema = getSchemaInfo(tableName);
 		}
 	}
+	public void displayCollection(){
+		for (Patron patron : patronList){
+			patron.display();
+		}
+	}
 }

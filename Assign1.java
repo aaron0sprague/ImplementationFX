@@ -449,7 +449,7 @@ public class Assign1 {
         System.out.println("Date to search after: " + input);
         System.out.println("Results: ");
         PatronCollection patronCol = new PatronCollection();
-        Vector<Patron> patrons = patronCol.findPatronsYoungerThan(input);
+        patronCol.findPatronsYoungerThan(input);
         for (Patron patron : patrons) {
             System.out.println(patron.getEntryListView());
         }

@@ -29,12 +29,6 @@ public class BookCollection extends EntityBase implements IView {
         bookList = new Vector<>();
     }
 
-    public BookCollection(String title)
-    {
-        super(myTableName);
-        setDependencies();
-        findBooksWithTitleLike(title);
-    }
 
     public Vector findBooksOlderThanDate(String year) {
         String query = "SELECT * FROM " + myTableName + " WHERE (pubYear <>> " + year + ") ORDER BY author ASC";
@@ -64,7 +58,9 @@ public class BookCollection extends EntityBase implements IView {
                 for (int index = 0; index < allDataRetrieved.size(); index++) {
                     Properties data = (Properties) allDataRetrieved.elementAt(index);
                     Book book = new Book(data);
-                    bookList.add(book);
+                    if (book != null) {
+                        bookList.add(book);
+                    }
                 }
             }
         } catch (Exception e) {
@@ -79,7 +75,7 @@ public class BookCollection extends EntityBase implements IView {
 
         myRegistry.setDependencies(dependencies);
     }
-    
+ /*    
     public Object getState(String key) {
         if (key.equals("books"))
             return bookList;
@@ -95,11 +91,11 @@ public class BookCollection extends EntityBase implements IView {
 
     /**
      * Called via the IView relationship
-     */
+     
     public void updateState(String key, Object value) {
         stateChangeRequest(key, value);
     }
-
+ */
     protected void initializeSchema(String tableName) {
         if (mySchema == null) {
             mySchema = getSchemaInfo(tableName);
