@@ -200,4 +200,15 @@ public class Patron extends EntityBase implements IView
 			mySchema = getSchemaInfo(tableName);
 		}
 	}
+public void displayCollection(){
+	
+}
+public String toString()
+{
+ 	return "Title: " + persistentState.getProperty("bookTitle") + "; Author: " +
+	  persistentState.getProperty("author")  + "; Year: " + 
+	  persistentState.getProperty("pubYear") ;
+} 
+
+
 }
