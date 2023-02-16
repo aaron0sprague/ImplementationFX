@@ -2,9 +2,11 @@ package model;
 
 import exception.InvalidPrimaryKeyException;
 import impresario.IView;
-// import javafx.scene.Scene;
-// import userinterface.View;
-// import userinterface.ViewFactory;
+import javafx.scene.Scene;
+import userinterface.View;
+import userinterface.ViewFactory;
+
+
 import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.Properties;
@@ -13,19 +15,22 @@ import java.util.Vector;
 public class Book extends EntityBase implements IView {
     private static final String myTableName = "Book";
     public String[] fields = {"author", "title", "pubYear", "status"};
-    Object updateStatusMessage = null;
-
+    //GUI
+    private String updateStatusMessage = "";
     // constructor
-    public Book(String bookId) throws InvalidPrimaryKeyException {
+    public Book(String bookId)
+            throws InvalidPrimaryKeyException {
         super(myTableName);
         setDependencies();
-        String query = String.format("SELECT * FROM %s WHERE (bookId = %s)",myTableName, bookId);
+        String query = String.format("SELECT * FROM %s WHERE (bookId = %s)",
+                myTableName, bookId);
         Vector<Properties> allDataRetrieved = getSelectQueryResult(query);
-        if (allDataRetrieved != null) {
+        // Book exists
+        if (allDataRetrieved != null){
             int size = allDataRetrieved.size();
             if (size != 1){
                 throw new InvalidPrimaryKeyException("Multiple books matching id : "+bookId+" found.");
-            } else {
+            } else{
                 Properties retrievedBookData = allDataRetrieved.elementAt(0);
                 persistentState = new Properties();
                 Enumeration allKeys = retrievedBookData.propertyNames();
@@ -38,16 +43,18 @@ public class Book extends EntityBase implements IView {
                 }
             }
         }
-        else {
+        // If no book found, throw exception
+        else{
             throw new InvalidPrimaryKeyException("No book matching id : "+bookId+" found.");
         }
     }
-    public Book(Properties bookInfo){
+    // used to create new book
+    public Book(Properties bookInfo) {
         super(myTableName);
         setDependencies();
         persistentState = new Properties();
         Enumeration allKeys = bookInfo.propertyNames();
-        while (allKeys.hasMoreElements()){
+        while (allKeys.hasMoreElements()) {
             String nextKey = (String) allKeys.nextElement();
             String nextValue = bookInfo.getProperty(nextKey);
             if (nextValue != null){
@@ -66,39 +73,25 @@ public class Book extends EntityBase implements IView {
         myRegistry.setDependencies(dependencies);
     }
     public Object getState(String key){
-        if (key.equals("UpdateStatusMessage"))
+        if (key.equals("UpdateStatusMessage")){
             return updateStatusMessage;
+        }
         return persistentState.getProperty(key);
     }
-    public void stateChangeRequest(String key, Object value) {
-        if (key.equals("InsertBook")) {
+    public void stateChangeRequest(String key, Object value){
+        if (key.equals("InsertBook")){
             processNewBook((Properties) value);
         }
         myRegistry.updateSubscribers(key, this);
     }
-    
-    private void processNewBook(Properties bookInfo) {
-        persistentState = new Properties();
-        Enumeration allKeys = bookInfo.propertyNames();
-        while (allKeys.hasMoreElements()) {
-            String nextKey = (String) allKeys.nextElement();
-            String nextValue = bookInfo.getProperty(nextKey);
-
-            if (nextValue != null) {
-                persistentState.setProperty(nextKey, nextValue);
-            }
-        }
-        updateStateInDatabase();
-    }
-
-    public void updateState(String key, Object value) {
+    public void updateState(String key, Object value){
         stateChangeRequest(key, value);
     }
-    public void update() {
+    public void update(){
         updateStateInDatabase();
     }
     private void updateStateInDatabase(){
-        try{
+        try {
             if (persistentState.getProperty("bookId") != null){
                 Properties whereClause = new Properties();
                 whereClause.setProperty("bookId",persistentState.getProperty("bookId"));
@@ -109,9 +102,26 @@ public class Book extends EntityBase implements IView {
                 persistentState.setProperty("bookId", "" + bookId);
                 updateStatusMessage = "Book data for new book : "+persistentState.getProperty("bookId")+"installed successfully in database!";
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex){
             updateStatusMessage = "Error inserting book data into database!";
         }
+    }
+    protected void createAndShowBookView(){
+        View newView = ViewFactory.createView("BookView", this);
+        Scene newScene = new Scene(newView);
+        swapToView(newScene);
+    }
+    private void processNewBook(Properties bookInfo){
+        persistentState = new Properties();
+        Enumeration allKeys = bookInfo.propertyNames();
+        while (allKeys.hasMoreElements()){
+            String nextKey = (String) allKeys.nextElement();
+            String nextValue = bookInfo.getProperty(nextKey);
+            if (nextValue != null){
+                persistentState.setProperty(nextKey, nextValue);
+            }
+        }
+        updateStateInDatabase();
     }
     public Vector<String> getEntryListView() {
         Vector<String> v = new Vector<>();
@@ -122,8 +132,8 @@ public class Book extends EntityBase implements IView {
         v.addElement(persistentState.getProperty("status"));
         return v;
     }
-    protected void initializeSchema(String tableName){
-        if (mySchema == null){
+    protected void initializeSchema(String tableName) {
+        if (mySchema == null) {
             mySchema = getSchemaInfo(tableName);
         }
     }
