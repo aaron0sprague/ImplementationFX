@@ -1,106 +1,61 @@
-// specify the package
 package model;
-
-// system imports
 
 import exception.InvalidPrimaryKeyException;
 import impresario.IView;
-
 import java.sql.SQLException;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Vector;
 
-// project imports
 //import userinterface.ViewFactory;
 
-/** The class containing the Patron for the application */
-//==============================================================
-public class Patron extends EntityBase implements IView
-{
+public class Patron extends EntityBase implements IView{
 	private static final String myTableName = "Patron";
-
 	protected Properties dependencies;
-
-	// GUI Components
-
+	//gui
 	private String updateStatusMessage = "";
-
-	// constructor for this class
-	//----------------------------------------------------------
-	public Patron(String patronId)
-			throws InvalidPrimaryKeyException
-	{
-		super(myTableName);
-
+	//constructor
+	public Patron(String patronId) throws InvalidPrimaryKeyException{
+		super(myTableName);a
 		setDependencies();
 		String query = "SELECT * FROM " + myTableName + " WHERE (patronId = " + patronId + ")";
-
 		Vector<Properties> allDataRetrieved = getSelectQueryResult(query);
-
-		// You must get one account at least
-		if (allDataRetrieved != null)
-		{
+		if (allDataRetrieved != null){
 			int size = allDataRetrieved.size();
-
-			// There should be EXACTLY one patron. Else error
-			if (size != 1)
-			{
-				throw new InvalidPrimaryKeyException("Multiple patrons matching id : "
-						+ patronId + " found.");
-			}
-			else
-			{
-				// copy all the retrieved data into persistent state
+			if (size != 1){
+				throw new InvalidPrimaryKeyException("Multiple patrons matching id : "+patronId+" found.");
+			} else{
 				Properties retrievedPatronData = allDataRetrieved.elementAt(0);
 				persistentState = new Properties();
-
 				Enumeration allKeys = retrievedPatronData.propertyNames();
-				while (allKeys.hasMoreElements() == true)
-				{
+				while (allKeys.hasMoreElements() == true){
 					String nextKey = (String)allKeys.nextElement();
 					String nextValue = retrievedPatronData.getProperty(nextKey);
 					// patronId = Integer.parseInt(retrievedPatronData.getProperty("patronId"));
-
-					if (nextValue != null)
-					{
+					if (nextValue != null){
 						persistentState.setProperty(nextKey, nextValue);
 					}
 				}
-
 			}
 		}
-		// If no patron found for this Id, throw an exception
-		else
-		{
-			throw new InvalidPrimaryKeyException("No account matching id : "
-					+ patronId + " found.");
+		// If no patron found for Id, throw exception
+		else{
+			throw new InvalidPrimaryKeyException("No account matching id : "+patronId+" found.");
 		}
 	}
-
-	// Can also be used to create a NEW patron (if the system it is part of
-	// allows for a new patron to be set up)
-	//----------------------------------------------------------
-	public Patron(Properties patronInfo)
-	{
+	public Patron(Properties patronInfo){
 		super(myTableName);
-
 		setDependencies();
 		persistentState = new Properties();
 		Enumeration allKeys = patronInfo.propertyNames();
-		while (allKeys.hasMoreElements() == true)
-		{
+		while (allKeys.hasMoreElements() == true){
 			String nextKey = (String)allKeys.nextElement();
 			String nextValue = patronInfo.getProperty(nextKey);
-
-			if (nextValue != null)
-			{
+			if (nextValue != null){
 				persistentState.setProperty(nextKey, nextValue);
 			}
 		}
 	}
-
-	//-----------------------------------------------------------------------------------
 	private void setDependencies()
 	{
 		dependencies = new Properties();
@@ -209,6 +164,4 @@ public String toString()
 	  persistentState.getProperty("author")  + "; Year: " + 
 	  persistentState.getProperty("pubYear") ;
 } 
-
-
 }
