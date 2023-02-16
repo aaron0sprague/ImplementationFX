@@ -8,48 +8,36 @@ import impresario.IView;
 import userinterface.View;
 import userinterface.ViewFactory;
  */
+
+ //imports
 import java.util.Properties;
 import java.util.Vector;
 
-// project imports
-
-/**
- * The class containing the BookCollection for the Assignment 1 application
- */
-//==============================================================
+// constructor
 public class BookCollection extends EntityBase implements IView {
     private static final String myTableName = "Book";
-
     private Vector<Book> bookList;
-
-    // constructor for this class
-    public BookCollection()
-    {
+    // class constructor
+    public BookCollection(){
         super(myTableName);
         bookList = new Vector<>();
     }
-
-
-    public Vector findBooksOlderThanDate(String year) {
-        String query = "SELECT * FROM " + myTableName + " WHERE (pubYear <>> " + year + ") ORDER BY author ASC";
+    public Vector findBooksOlderThanDate(String year){
+        String query = "SELECT * FROM "+myTableName+" WHERE (pubYear <>> "+year+") ORDER BY author ASC";
         return doQuery(query);
     }
-
-    public Vector findBooksNewerThanDate(String year) {
-        String query = "SELECT * FROM " + myTableName + " WHERE (pubYear > " + year + ") ORDER BY author ASC";
+    public Vector findBooksNewerThanDate(String year){
+        String query = "SELECT * FROM "+myTableName+" WHERE (pubYear > "+year+") ORDER BY author ASC";
         return doQuery(query);
     }
-
     public Vector findBooksWithTitleLike(String title) {
         String query = "SELECT * FROM " + myTableName + " WHERE title LIKE '%" + title + "%' ORDER BY author ASC";
         return doQuery(query);
     }
-
     public Vector findBooksWithAuthorLike(String author) {
         String query = "SELECT * FROM " + myTableName + " WHERE author LIKE '%" + author + "%' ORDER BY author ASC";
         return doQuery(query);
     }
-
     private Vector doQuery(String query) {
         try {
             Vector allDataRetrieved = getSelectQueryResult(query);
@@ -75,27 +63,6 @@ public class BookCollection extends EntityBase implements IView {
 
         myRegistry.setDependencies(dependencies);
     }
- /*    
-    public Object getState(String key) {
-        if (key.equals("books"))
-            return bookList;
-        else if (key.equals("bookList"))
-            return this;
-        return null;
-    }
-
-    public void stateChangeRequest(String key, Object value) {
-
-        myRegistry.updateSubscribers(key, this);
-    }
-
-    /**
-     * Called via the IView relationship
-     
-    public void updateState(String key, Object value) {
-        stateChangeRequest(key, value);
-    }
- */
     protected void initializeSchema(String tableName) {
         if (mySchema == null) {
             mySchema = getSchemaInfo(tableName);
