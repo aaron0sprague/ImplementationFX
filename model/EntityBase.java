@@ -13,14 +13,14 @@
 package model;
 
 // system imports
-import java.io.File;
+/* import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.Properties;
 import java.util.Vector;
-/* import javafx.scene.Scene;
+ *//* import javafx.scene.Scene;
 import javafx.stage.Stage;
  */
 // project imports

@@ -76,6 +76,21 @@ public class Book extends EntityBase implements IView {
         }
         myRegistry.updateSubscribers(key, this);
     }
+    
+    private void processNewBook(Properties bookInfo) {
+        persistentState = new Properties();
+        Enumeration allKeys = bookInfo.propertyNames();
+        while (allKeys.hasMoreElements()) {
+            String nextKey = (String) allKeys.nextElement();
+            String nextValue = bookInfo.getProperty(nextKey);
+
+            if (nextValue != null) {
+                persistentState.setProperty(nextKey, nextValue);
+            }
+        }
+        updateStateInDatabase();
+    }
+
     public void updateState(String key, Object value) {
         stateChangeRequest(key, value);
     }
