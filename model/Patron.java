@@ -16,7 +16,7 @@ public class Patron extends EntityBase implements IView{
 	private String updateStatusMessage = "";
 	//constructor
 	public Patron(String patronId) throws InvalidPrimaryKeyException{
-		super(myTableName);a
+		super(myTableName);
 		setDependencies();
 		String query = "SELECT * FROM " + myTableName + " WHERE (patronId = " + patronId + ")";
 		Vector<Properties> allDataRetrieved = getSelectQueryResult(query);
