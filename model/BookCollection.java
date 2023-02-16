@@ -1,15 +1,10 @@
-// specify the package
 package model;
-
-// system imports
 
 import impresario.IView;
 /* import javafx.scene.Scene;
 import userinterface.View;
 import userinterface.ViewFactory;
  */
-
- //imports
 import java.util.Properties;
 import java.util.Vector;
 
