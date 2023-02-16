@@ -100,7 +100,7 @@ public class PatronCollection extends EntityBase implements IView
 	}
 	public void displayCollection(){
 		for (Patron patron : patronList){
-			patron.display();
+			patron.displayCollection();
 		}
 	}
 }

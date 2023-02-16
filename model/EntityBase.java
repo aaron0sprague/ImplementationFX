@@ -13,14 +13,14 @@
 package model;
 
 // system imports
-/* import java.io.File;
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.Properties;
 import java.util.Vector;
- *//* import javafx.scene.Scene;
+/* import javafx.scene.Scene;
 import javafx.stage.Stage;
  */
 // project imports
@@ -54,6 +54,7 @@ public abstract class EntityBase extends Persistable
 
 	// forward declarations
 	public abstract Object getState(String key);
+	@Override
 	public abstract void stateChangeRequest(String key, Object value);
 	protected abstract void initializeSchema(String tableName);
 

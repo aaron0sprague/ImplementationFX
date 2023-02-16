@@ -9,7 +9,7 @@ import java.util.Properties;
 import java.util.Vector;
 
 // constructor
-public class BookCollection extends EntityBase implements IView {
+public class BookCollection extends EntityBase {
     private static final String myTableName = "Book";
     private Vector<Book> bookList;
     // class constructor
@@ -62,5 +62,19 @@ public class BookCollection extends EntityBase implements IView {
         if (mySchema == null) {
             mySchema = getSchemaInfo(tableName);
         }
+    }
+    
+    public Object getState(String key) {
+        if (key.equals("Accounts"))
+            return bookList;
+        else if (key.equals("BookList"))
+            return this;
+        return null;
+    }
+
+    // ----------------------------------------------------------------
+    public void stateChangeRequest(String key, Object value) {
+
+        myRegistry.updateSubscribers(key, this);
     }
 }
