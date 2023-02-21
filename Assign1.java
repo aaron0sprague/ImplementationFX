@@ -494,8 +494,8 @@ public class Assign1 {
 
     private static void initialPrompt(){
         System.out.println("+==========================================+");
-        System.out.println("| CSC 429 - Assignment 1 - Pair Programming |");
-        System.out.println("| Authors: Cholla Grygotis & Erik Nystrom  |");
+        System.out.println("| CSC 429 - Pair Programming Assignment|");
+        System.out.println("| Authors: Shain Krutz and Aaron Sprague |");
         System.out.println("+==========================================+");
         System.out.println("+==========================================+");
     }
