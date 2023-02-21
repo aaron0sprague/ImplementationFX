@@ -1,4 +1,3 @@
-// tabs=4
 //************************************************************
 //	COPYRIGHT 2007 ArchSynergy, Ltd. - ALL RIGHTS RESERVED
 //
@@ -23,15 +22,15 @@
 package database;
 
 /// system imports
-import java.util.Enumeration;
-import java.sql.Driver;
-import java.sql.DriverManager;
+
+import common.PropertyFile;
+import event.Event;
+
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.SQLException;
 
 // project imports
-import common.PropertyFile;
-import event.Event;
 
 //==============================================================
 public class JDBCBroker
@@ -47,9 +46,6 @@ public class JDBCBroker
 	private String username = null;
 	private String password = null;
     private String server = null;
-	
-	private String dbClassNameVal = null;
-	private String dbInstallationNameVal = null;
     
 	// singleton constructor
 	//----------------------------------------------------------
@@ -91,15 +87,8 @@ public class JDBCBroker
 			server = props.getProperty("server");
 			if (server == null)
 				server = "localhost";
-			dbClassNameVal = props.getProperty("dbClassName");
-			if (dbClassNameVal == null)
-				dbClassNameVal = "org.mariadb.jdbc.Driver";
-			dbInstallationNameVal = props.getProperty("dbInstallation");
-			if (dbInstallationNameVal == null)
-				dbInstallationNameVal = "mariadb";
-			
 		}
-		String driverClassName = dbClassNameVal;
+		String driverClassName = "com.mysql.jdbc.Driver";
 		try
 		{	
 			// load and register the JDBC driver classes
@@ -136,7 +125,7 @@ public class JDBCBroker
 					try
 					{
 						// Create a connection to the database
-						theDBConnection = theDriver.connect("jdbc:" + dbInstallationNameVal +"://"+server+":3306/" + 
+						theDBConnection = theDriver.connect("jdbc:mysql://"+server+":3306/" + 
 							dbName + "?" + "user=" + username + "&password=" +
 							password, null);					
 					}
