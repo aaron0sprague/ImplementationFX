@@ -20,7 +20,7 @@
 /** @version	$Revision: 1.1.1.2 $ */
 
 
-// specify the package
+// specify the package	
 package database;
 
 // system imports

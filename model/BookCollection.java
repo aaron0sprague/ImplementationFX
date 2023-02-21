@@ -18,7 +18,7 @@ public class BookCollection extends EntityBase {
         bookList = new Vector<>();
     }
     public Vector findBooksOlderThanDate(String year){
-        String query = "SELECT * FROM "+myTableName+" WHERE (pubYear <>> "+year+") ORDER BY author ASC";
+        String query = "SELECT * FROM "+myTableName+" WHERE (pubYear < "+year+") ORDER BY author ASC";
         return doQuery(query);
     }
     public Vector findBooksNewerThanDate(String year){
