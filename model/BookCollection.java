@@ -26,7 +26,7 @@ public class BookCollection extends EntityBase {
         return doQuery(query);
     }
     public Vector findBooksWithTitleLike(String bookTitle) {
-        String query = "SELECT * FROM " + myTableName + " WHERE title LIKE '%" + bookTitle + "%' ORDER BY author ASC";
+        String query = "SELECT * FROM " + myTableName + " WHERE bookTitle LIKE '%" + bookTitle + "%' ORDER BY author ASC";
         return doQuery(query);
     }
     public Vector findBooksWithAuthorLike(String author) {

@@ -22,7 +22,7 @@ import impresario.IView;
 //==============================================================
 public class Book extends EntityBase implements IView {
     private static final String myTableName = "Book";
-    public String[] fields = {"author", "title", "pubYear", "status"};
+    public String[] fields = {"author", "bookTitle", "pubYear", "status"};
 
     // GUI Components
     private String updateStatusMessage = "";

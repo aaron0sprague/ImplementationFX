@@ -18,3 +18,4 @@
 [2/21/23, 1:23 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[com.mysql.jdbc.Driver]>
 [2/21/23, 1:26 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[com.mysql.jdbc.Driver]>
 [2/21/23, 1:28 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[com.mysql.jdbc.Driver]>
+[2/23/23, 1:01 PM]|BookCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: (conn=59912) Unknown column 'title' in 'where clause'>
