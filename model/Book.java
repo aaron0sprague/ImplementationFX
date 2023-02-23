@@ -12,7 +12,7 @@ import javax.swing.text.ViewFactory;
 
 import exception.InvalidPrimaryKeyException;
 import impresario.IView;
-import javafx.scene.Scene;
+import javafx.scene.Group;
 
 // project imports
 
