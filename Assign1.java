@@ -302,7 +302,7 @@ public class Assign1 {
         props.setProperty("author", input);
         System.out.print("Book Title: ");
         input = System.console().readLine();
-        props.setProperty("title", input);
+        props.setProperty("bookTitle", input);
         System.out.print("Publication year (yyyy): ");
         input = System.console().readLine();
         props.setProperty("pubYear", input);
@@ -369,7 +369,7 @@ public class Assign1 {
     private static void createBook(int count) {
         Properties props = new Properties();
         props.setProperty("author", "Name " + count);
-        props.setProperty("title", "Title " + count);
+        props.setProperty("bookTitle", "Title " + count);
         int year = 1950 + count * 3;
         props.setProperty("pubYear", String.valueOf(year));
         props.setProperty("status", "active");
