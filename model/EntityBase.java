@@ -20,9 +20,9 @@ import java.util.Date;
 import java.util.Hashtable;
 import java.util.Properties;
 import java.util.Vector;
-/* import javafx.scene.Scene;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
- */
+
 // project imports
 import database.Persistable;
 import impresario.ModelRegistry;
@@ -30,10 +30,10 @@ import impresario.IModel;
 import impresario.IView;
 import impresario.ISlideShow;
 import event.Event;
-/* import userinterface.MainStageContainer;
+import userinterface.MainStageContainer;
 import userinterface.View;
 import userinterface.WindowPosition;
- */
+
 
 /** The superclass for all Fast Trax Model Entities that are also
  *  Persistable */
@@ -62,9 +62,9 @@ public abstract class EntityBase extends Persistable
 	//----------------------------------------------------------
 	protected EntityBase(String tablename)
 	{
-		/* myStage = MainStageContainer.getInstance();
+		myStage = MainStageContainer.getInstance();
 		myViews = new Hashtable<String, Scene>();
- */
+
 		// save our table name for later
 		myTableName = tablename;
 
@@ -130,7 +130,7 @@ public abstract class EntityBase extends Persistable
     }	
 
      //-----------------------------------------------------------------------------
-     /* public void swapToView(Scene otherView)
+     public void swapToView(Scene otherView)
      {
 
 		if (otherView == null)
@@ -147,6 +147,6 @@ public abstract class EntityBase extends Persistable
 		WindowPosition.placeCenter(myStage);
 		 
     }
-	*/
+	
 }
 

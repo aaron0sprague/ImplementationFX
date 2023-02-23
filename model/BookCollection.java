@@ -1,10 +1,10 @@
 package model;
 
 import impresario.IView;
-/* import javafx.scene.Scene;
+import javafx.scene.Scene;
 import userinterface.View;
 import userinterface.ViewFactory;
- */
+
 import java.util.Properties;
 import java.util.Vector;
 

@@ -12,7 +12,7 @@ import javax.swing.text.ViewFactory;
 
 import exception.InvalidPrimaryKeyException;
 import impresario.IView;
-// import javafx.scene.Scene;
+import javafx.scene.Scene;
 
 // project imports
 
@@ -150,15 +150,15 @@ public class Book extends EntityBase implements IView {
             updateStatusMessage = "Error inserting book data into database!";
         }
     }
-    // protected void createAndShowBookView()
-    // {
-    //     // create our new view
-    //     View newView = ViewFactory.createView("BookView", this);
-    //     Scene newScene = new Scene(newView);
+    protected void createAndShowBookView()
+    {
+         // create our new view
+         View newView = ViewFactory.createView("BookView", this);
+         Scene newScene = new Scene(newView);
 
-    //     // make the view visible by installing it into the frame
-    //     swapToView(newScene);
-    // }
+         // make the view visible by installing it into the frame
+         swapToView(newScene);
+    }
 
     private void processNewBook(Properties bookInfo) {
         persistentState = new Properties();

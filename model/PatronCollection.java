@@ -9,7 +9,7 @@ import java.util.Properties;
 import java.util.Vector;
 
 // project imports
-//import userinterface.ViewFactory;
+import userinterface.ViewFactory;
 
 /** The class containing the PatronCollection for the application */
 //==============================================================
