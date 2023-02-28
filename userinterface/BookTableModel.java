@@ -1,5 +1,6 @@
 package userinterface;
 import javafx.beans.property.SimpleStringProperty;
+//import javafx.scene.text.Text;
 import java.util.Vector;
 public class BookTableModel{
     private final SimpleStringProperty bookId;
@@ -7,6 +8,7 @@ public class BookTableModel{
     private final SimpleStringProperty bookTitle;
     private final SimpleStringProperty pubYear;
     private final SimpleStringProperty status;
+    
     BookTableModel(Vector<String> bookInfo){
         bookId = new SimpleStringProperty(bookInfo.elementAt(0));
         author = new SimpleStringProperty(bookInfo.elementAt(1));
@@ -29,8 +31,8 @@ public class BookTableModel{
     public String getbookTitle(){
         return bookTitle.get();
     }
-    public void setbookTitle(String bookTitle){
-        bookTitle.set(bookTitle);
+    public void setbookTitle(String bookTitl){
+        bookTitle.set(bookTitl);//bookTitl would be bookTitle, but causes eoor with variable bookTitle
     }
     public String getPubYear(){
         return pubYear.get();
