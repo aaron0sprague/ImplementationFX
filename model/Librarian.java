@@ -17,9 +17,7 @@ import userinterface.WindowPosition;
 import java.util.Hashtable;
 import java.util.Properties;
 
-/**
- * The class containing the Teller for the ATM application
- */
+
 public class Librarian implements IView, IModel
 // This class implements all these interfaces (and does NOT extend 'EntityBase')
 // because it does NOT play the role of accessing the back-end database tables.
