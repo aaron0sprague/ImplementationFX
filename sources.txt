@@ -1,4 +1,5 @@
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\Assign1.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\main.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\common\PropertyFile.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\common\StringList.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\database\JDBCBroker.java
@@ -23,6 +24,7 @@ C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\impres
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\Book.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\BookCollection.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\EntityBase.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\Librarian.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\Patron.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\PatronCollection.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\BookCollectionView.java
