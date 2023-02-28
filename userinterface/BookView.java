@@ -32,7 +32,7 @@ public class BookView extends View {
 
     // GUI components
     private TextField authorField;
-    private TextField titleField;
+    private TextField bookTitleField;
     private TextField pubYearField;
 
     private ComboBox statusCombo;
@@ -112,10 +112,10 @@ public class BookView extends View {
         titleLabel.setTextAlignment(TextAlignment.RIGHT);
         grid.add(titleLabel, 0, 2);
 
-        titleField = new TextField();
-        titleField.setOnAction(this::processAction);
+        bookTitleField = new TextField();
+        bookTitleField.setOnAction(this::processAction);
 
-        grid.add(titleField, 1, 2);
+        grid.add(bookTitleField, 1, 2);
 
         Text pubYearLabel = new Text(" Publication Year : ");
         pubYearLabel.setFont(myFont);
@@ -173,12 +173,12 @@ public class BookView extends View {
         return statusLog;
     }
 
-//    public void populateFields() {
-//        authorField.setText((String) myModel.getState("author"));
-//        bookTitleField.setText((String) myModel.getState("bookTitle"));
-//        pubYearField.setText((String) myModel.getState("pubYear"));
-//        serviceCharge.setText((String) myModel.getState("status"));
-//    }
+   public void populateFields() {
+       authorField.setText((String) myModel.getState("author"));
+       bookTitleField.setText((String) myModel.getState("bookTitle"));
+       pubYearField.setText((String) myModel.getState("pubYear"));
+       //serviceCharge.setText((String) myModel.getState("status"));
+   }
 
     public void processAction(Event evt)
     {
