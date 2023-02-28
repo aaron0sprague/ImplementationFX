@@ -110,7 +110,7 @@ public class Librarian implements IView, IModel
     }
 
     private void searchBooks(String bookTitle) {
-        BookCollection bookList = new BookCollection(bookTitle);
+        BookCollection bookList = new BookCollection();
         bookList.subscribe("CancelTransaction", this);
         bookList.subscribe("SearchBookView", this);
         bookList.createAndShowBookCollectionView();
