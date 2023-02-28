@@ -25,4 +25,14 @@ C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\EntityBase.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\Patron.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\model\PatronCollection.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\BookCollectionView.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\BookSearchView.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\BookTableModel.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\BookView.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\LibrarianView.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\MainStageContainer.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\MessageView.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\View.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\ViewFactory.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\WindowPosition.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\Utilities\Utilities.java
