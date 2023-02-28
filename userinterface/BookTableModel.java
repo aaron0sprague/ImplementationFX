@@ -39,7 +39,7 @@ public class BookTableModel {
         return bookTitle.get();
     }
 
-    public void setTitle(String bookTitle) {
+    public void setbookTitle(String bookTitle) {
         bookTitle.set(bookTitle);
     }
 
