@@ -77,4 +77,6 @@ public class BookCollection extends EntityBase {
 
         myRegistry.updateSubscribers(key, this);
     }
+    public void createAndShowBookCollectionView() {
+    }
 }
