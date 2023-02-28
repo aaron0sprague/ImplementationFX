@@ -5,14 +5,14 @@ import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Vector;
 
-import javax.swing.text.View;
-import javax.swing.text.ViewFactory;
 
 // system imports
 
 import exception.InvalidPrimaryKeyException;
 import impresario.IView;
-import javafx.scene.Group;
+import javafx.scene.Scene;
+import userinterface.View;
+import userinterface.ViewFactory;
 
 // project imports
 

@@ -47,9 +47,9 @@ public abstract class EntityBase extends Persistable
 	protected Properties persistentState;	// the field names and values from the database
 	private String myTableName;				// the name of our database table
 
-	/* protected Hashtable<String, Scene> myViews;
+	protected Hashtable<String, Scene> myViews;
 	protected Stage myStage;
- */
+
 	protected Properties mySchema;
 
 	// forward declarations
