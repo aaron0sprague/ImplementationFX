@@ -122,6 +122,38 @@ public class Librarian implements IView, IModel
     private void searchPatron() {
 
     }
+    private void createAndShowAddStudentBorrowerView()
+    {
+        Scene currentScene = (Scene)myViews.get("AddStudentBorrowerView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("AddStudentBorrowerView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("AddStudentBorrowerView", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
+
+    //------------------------------------------------------------
+    private void createAndShowSearchStudentBorrowerView()
+    {
+        Scene currentScene = (Scene)myViews.get("SearchStudentBorrowerView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("SearchStudentBorrowerView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("SearchStudentBorrowerView", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
 
     private void createAndShowLibrarianView() {
         Scene currentScene = myViews.get("LibrarianView");
