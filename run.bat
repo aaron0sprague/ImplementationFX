@@ -1,1 +1,2 @@
-java -cp mariadb-java-client-3.0.3.jar;classes; main.java
+set PATH_TO_FX="c:\\Program Files (x86)\\Java\\openjfx-19.0.2.1_windows-x64_bin-sdk\\javafx-sdk-19.0.2.1\\lib"
+java -cp mariadb-java-client-3.0.3.jar;classes; --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml,javafx.base,javafx.graphics,javafx.media,javafx.swing,javafx.web main.java
