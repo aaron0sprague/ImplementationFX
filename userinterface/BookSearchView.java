@@ -179,9 +179,3 @@ public class BookSearchView extends View {
     }
 
 }
-
-//---------------------------------------------------------------
-//	Revision History:
-//
-
-

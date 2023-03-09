@@ -86,7 +86,9 @@ public class Patron extends EntityBase implements IView{
 	//----------------------------------------------------------------
 	public void stateChangeRequest(String key, Object value)
 	{
-
+		if (key.equals("InsertPatron")) {
+			processNewPatron((Properties) value);
+		}
 		myRegistry.updateSubscribers(key, this);
 	}
 
