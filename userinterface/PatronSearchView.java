@@ -84,12 +84,12 @@ public class PatronSearchView extends View {
         prompt.setFill(Color.BLACK);
         grid.add(prompt, 0, 0, 2, 1);
 
-        Text titleSearchLabel = new Text(" ZIP : ");
+        Text zipSearchLabel = new Text(" ZIP : ");
         Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
-        titleSearchLabel.setFont(myFont);
-        titleSearchLabel.setWrappingWidth(50);
-        titleSearchLabel.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(titleSearchLabel, 0, 1);
+        zipSearchLabel.setFont(myFont);
+        zipSearchLabel.setWrappingWidth(50);
+        zipSearchLabel.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(zipSearchLabel, 0, 1);
 
         zipSearchField = new TextField();
         zipSearchField.setOnAction(this::processAction);

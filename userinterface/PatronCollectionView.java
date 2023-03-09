@@ -65,11 +65,18 @@ public class PatronCollectionView extends View {
     // --------------------------------------------------------------------------
     protected void getEntryTableModelValues() {
 
+        System.out.println("In Bcview: getting entry table model values");
         ObservableList<PatronTableModel> tableData = FXCollections.observableArrayList();
         try {
             PatronCollection patronList = (PatronCollection) myModel.getState("patronList");
 
+            if (patronList != null)
+                System.out.println("In Bcview: patron collection found");
+            else
+                System.out.println("In Bcview: patron collection NOT found");
+
             Vector entryList = (Vector) patronList.getState("patrons");
+            System.out.println("In BCview: found " + entryList.size() + " patrons");
             Enumeration entries = entryList.elements();
 
             while (entries.hasMoreElements()) {

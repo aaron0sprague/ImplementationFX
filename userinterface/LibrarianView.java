@@ -105,7 +105,7 @@ public class LibrarianView extends View {
         Button searchPatrons = new Button("Search Patrons");
         searchPatrons.setOnAction(
                 // Lambda function call to stateChangeRequest
-                e -> myModel.stateChangeRequest("SearchPatrons", ""));
+                e -> myModel.stateChangeRequest("SearchPatronView", ""));
         searchPatrons.setMinWidth(grid.getPrefWidth());
         grid.add(searchPatrons, 0,3);
         GridPane.setHalignment(searchPatrons, HPos.CENTER);

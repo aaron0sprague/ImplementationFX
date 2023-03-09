@@ -190,7 +190,7 @@ public class Patron extends EntityBase implements IView{
 			mySchema = getSchemaInfo(tableName);
 		}
 	}
-public void displayCollection(){
+/* public void displayCollection(){
 	System.out.println();
 }
 public String toString()
@@ -198,5 +198,5 @@ public String toString()
  	return "Title: " + persistentState.getProperty("bookTitle") + "; Author: " +
 	  persistentState.getProperty("author")  + "; Year: " + 
 	  persistentState.getProperty("pubYear") ;
-} 
+}  */
 }
