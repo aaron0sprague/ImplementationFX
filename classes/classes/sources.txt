@@ -34,6 +34,10 @@ C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userin
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\LibrarianView.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\MainStageContainer.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\MessageView.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\PatronCollectionView.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\PatronSearchView.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\PatronTableModel.java
+C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\PatronView.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\View.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\ViewFactory.java
 C:\Users\scout\OneDrive\Desktop\BP2023S\CSC429\project\ImplementationFX-1\userinterface\WindowPosition.java

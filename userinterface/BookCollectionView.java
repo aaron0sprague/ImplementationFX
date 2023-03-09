@@ -63,11 +63,15 @@ public class BookCollectionView extends View {
     //--------------------------------------------------------------------------
     protected void getEntryTableModelValues() {
 
+        System.out.println("In Bcview: getting entry table model values");
         ObservableList<BookTableModel> tableData = FXCollections.observableArrayList();
         try {
             BookCollection bookList = (BookCollection) myModel.getState("bookList");
 
+            if (bookList != null ) System.out.println("In Bcview: book collection found");
+            else System.out.println("In Bcview: book collection NOT found");
             Vector entryList = (Vector) bookList.getState("books");
+            System.out.println("In BCview: found " + entryList.size() + " books");
             Enumeration entries = entryList.elements();
 
             while (entries.hasMoreElements()) {

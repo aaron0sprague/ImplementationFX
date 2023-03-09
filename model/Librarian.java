@@ -65,6 +65,7 @@ public class Librarian implements IView, IModel
      * @return Value associated with the field
      */
     public Object getState(String key) {
+        //if (key.equals("bookList")) 
         switch (key) {
             case "TransactionError":
                 return transactionErrorMessage;
@@ -124,6 +125,7 @@ public class Librarian implements IView, IModel
 
     private void searchBooks(String bookTitle) {
         BookCollection bookList = new BookCollection();
+        bookList.findBooksWithTitleLike(bookTitle);
         bookList.subscribe("CancelTransaction", this);
         bookList.subscribe("SearchBookView", this);
         bookList.createAndShowBookCollectionView();

@@ -28,10 +28,10 @@ public class BookTableModel{
     public void setAuthor(String bookAuthor){
         author.set(bookAuthor);
     }
-    public String getbookTitle(){
+    public String getBookTitle(){
         return bookTitle.get();
     }
-    public void setbookTitle(String bookTitl){
+    public void setBookTitle(String bookTitl){
         bookTitle.set(bookTitl);//bookTitl would be bookTitle, but causes eoor with variable bookTitle
     }
     public String getPubYear(){
