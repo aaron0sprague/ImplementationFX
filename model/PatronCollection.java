@@ -27,6 +27,7 @@ public class PatronCollection extends EntityBase implements IView
 	//----------------------------------------------------------
 	public PatronCollection() {
 		super(myTableName);
+		setDependencies();
 		patronList = new Vector<>(); // new Vector<Patron>();
 	}
 
@@ -74,6 +75,13 @@ public class PatronCollection extends EntityBase implements IView
 		return patronList;
 	}
 
+	private void setDependencies() {
+		Properties dependencies = new Properties();
+		dependencies.setProperty("CancelSearchPatron", "SearchPatronView");
+
+		myRegistry.setDependencies(dependencies);
+	}
+	
 	//----------------------------------------------------------
 	public Object getState(String key)
 	{

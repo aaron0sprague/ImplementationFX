@@ -70,7 +70,7 @@ public class Patron extends EntityBase implements IView{
 	private void setDependencies()
 	{
 		dependencies = new Properties();
-
+		dependencies.setProperty("CancelAddPatron", "CancelTransaction");
 		myRegistry.setDependencies(dependencies);
 	}
 
