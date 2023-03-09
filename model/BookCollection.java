@@ -58,6 +58,19 @@ public class BookCollection extends EntityBase {
 
         myRegistry.setDependencies(dependencies);
     }
+    protected void createAndShowBookCollectionView() {
+        Scene currentScene = myViews.get("BookCollectionView");
+
+        if (currentScene == null) {
+            // create our initial view
+            View newView = ViewFactory.createView("BookCollectionView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("BookCollectionView", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
     protected void initializeSchema(String tableName) {
         if (mySchema == null) {
             mySchema = getSchemaInfo(tableName);
@@ -76,7 +89,5 @@ public class BookCollection extends EntityBase {
     public void stateChangeRequest(String key, Object value) {
 
         myRegistry.updateSubscribers(key, this);
-    }
-    public void createAndShowBookCollectionView() {
     }
 }
