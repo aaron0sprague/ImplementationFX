@@ -202,7 +202,7 @@ public class PatronCollectionView extends View {
         cancelButton = new Button("Back");
         cancelButton.setOnAction(e -> {
             clearErrorMessage();
-            myModel.stateChangeRequest("CancelSearchPatron", null);
+            myModel.stateChangeRequest("CancelTransaction", null);
         });
 
         HBox btnContainer = new HBox(100);

@@ -170,7 +170,7 @@ public class BookCollectionView extends View {
         cancelButton = new Button("Back");
         cancelButton.setOnAction(e -> {
             clearErrorMessage();
-            myModel.stateChangeRequest("CancelSearchBook", null);
+            myModel.stateChangeRequest("CancelTransaction", null);
         });
 
         HBox btnContainer = new HBox(100);

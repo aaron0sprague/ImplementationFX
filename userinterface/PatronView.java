@@ -208,7 +208,7 @@ public class PatronView extends View {
         // doneButton.setFont(Font.font("Arial", FontWeight.BOLD, 14));
         doneButton.setOnAction(e -> {
             clearErrorMessage();
-            myModel.stateChangeRequest("CancelAddPatron", null);
+            myModel.stateChangeRequest("CancelTransaction", null);
         });
         doneCont.getChildren().add(submitButton);
         doneCont.getChildren().add(doneButton);
