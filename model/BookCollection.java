@@ -11,12 +11,22 @@ import java.util.Vector;
 // constructor
 public class BookCollection extends EntityBase {
     private static final String myTableName = "Book";
+    private static final String queryTemplate = "SELECT * FROM " + myTableName + " WHERE "; // new add
+
     private Vector<Book> bookList;
     // class constructor
     public BookCollection(){
         super(myTableName);
         bookList = new Vector<>();
     }
+
+    // new add
+    public BookCollection(String bookTitle) {
+        super(myTableName);
+        setDependencies();
+        findBooksWithTitleLike(bookTitle);
+    }
+
     public Vector findBooksOlderThanDate(String year){
         String query = "SELECT * FROM "+myTableName+" WHERE (pubYear < "+year+") ORDER BY author ASC";
         return doQuery(query);
@@ -89,5 +99,12 @@ public class BookCollection extends EntityBase {
     public void stateChangeRequest(String key, Object value) {
 
         myRegistry.updateSubscribers(key, this);
+    }
+    
+    /**
+     * Called via the IView relationship
+     */
+    public void updateState(String key, Object value) {
+        stateChangeRequest(key, value);
     }
 }
