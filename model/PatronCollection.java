@@ -4,12 +4,15 @@ package model;
 // system imports
 
 import impresario.IView;
+import javafx.scene.Scene;
+import userinterface.View;
+import userinterface.ViewFactory;
 
 import java.util.Properties;
 import java.util.Vector;
 
 // project imports
-import userinterface.ViewFactory;
+//import userinterface.ViewFactory;
 
 /** The class containing the PatronCollection for the application */
 //==============================================================
@@ -48,6 +51,12 @@ public class PatronCollection extends EntityBase implements IView
 		return doQuery(query);
 	}
 
+	public Vector findAllPatrons() {
+
+		String query = "SELECT * FROM " + myTableName + " ORDER BY name ASC;";
+		return doQuery(query);
+	}
+	
 	private Vector doQuery(String query) {
 		try {
 			Vector allDataRetrieved = getSelectQueryResult(query);
@@ -98,9 +107,17 @@ public class PatronCollection extends EntityBase implements IView
 			mySchema = getSchemaInfo(tableName);
 		}
 	}
-	public void displayCollection(){
-		for (Patron patron : patronList){
-			patron.displayCollection();
+	
+	public void createAndShowPatronCollectionView() {
+		Scene currentScene = myViews.get("PatronCollectionView");
+
+		if (currentScene == null) {
+			// create our initial view
+			View newView = ViewFactory.createView("PatronCollectionView", this); // USE VIEW FACTORY
+			currentScene = new Scene(newView);
+			myViews.put("PatronCollectionView", currentScene);
 		}
+
+		swapToView(currentScene);
 	}
 }
