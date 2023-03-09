@@ -173,12 +173,12 @@ public class BookView extends View {
         return statusLog;
     }
 
-   public void populateFields() {
+ /*   public void populateFields() {
        authorField.setText((String) myModel.getState("author"));
        bookTitleField.setText((String) myModel.getState("bookTitle"));
        pubYearField.setText((String) myModel.getState("pubYear"));
        //serviceCharge.setText((String) myModel.getState("status"));
-   }
+   } */
 
     public void processAction(Event evt)
     {

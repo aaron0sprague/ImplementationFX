@@ -37,7 +37,7 @@ public class LibrarianView extends View {
         VBox container = new VBox(10);
         container.setAlignment(Pos.CENTER);
 
-        container.setPadding(new Insets(15, 5, 0, 5));
+        container.setPadding(new Insets(50, 25, 0, 25));
 
         // create a Node (Text) for showing the title
         container.getChildren().add(createTitle());
@@ -68,10 +68,10 @@ public class LibrarianView extends View {
     // Create the main form contents
     private GridPane createFormContents() {
         GridPane grid = new GridPane();
-        grid.setPrefWidth(150);
+        grid.setPrefWidth(250);
         grid.setAlignment(Pos.CENTER);
-        grid.setHgap(10);
-        grid.setVgap(10);
+        grid.setHgap(15);
+        grid.setVgap(15);
         grid.setPadding(new Insets(25, 25, 0, 25));
 
         // New book
