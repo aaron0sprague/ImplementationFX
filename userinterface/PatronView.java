@@ -51,7 +51,7 @@ public class PatronView extends View {
 
     // constructor for this class -- takes a model object
     PatronView(IModel book) {
-        super(book, "BookView");
+        super(book, "PatronView");
 
         // create a container for showing the contents
         VBox container = new VBox(10);
