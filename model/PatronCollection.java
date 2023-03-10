@@ -118,18 +118,7 @@ public class PatronCollection extends EntityBase implements IView
 		}
 	}
 	
-	/* public void createAndShowPatronCollectionView() {
-		Scene currentScene = myViews.get("PatronCollectionView");
 
-		if (currentScene == null) {
-			// create our initial view
-			View newView = ViewFactory.createView("PatronCollectionView", this); // USE VIEW FACTORY
-			currentScene = new Scene(newView);
-			myViews.put("PatronCollectionView", currentScene);
-		}
-
-		swapToView(currentScene);
-	} */
 	public void createAndShowPatronCollectionView() {
 		Scene currentScene = myViews.get("PatronSearchView");
 
