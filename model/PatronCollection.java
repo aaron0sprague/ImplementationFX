@@ -72,6 +72,8 @@ public class PatronCollection extends EntityBase implements IView
 		} catch (Exception e) {
 			System.out.println("Exception: " + e);
 		}
+		System.out.println("In Bcview: doQuery - PatronCollection.java");
+		System.out.println(patronList + "prints patronList");
 		return patronList;
 	}
 
@@ -136,6 +138,19 @@ public class PatronCollection extends EntityBase implements IView
 			View newView = ViewFactory.createView("PatronSearchView", this); // USE VIEW FACTORY
 			currentScene = new Scene(newView);
 			myViews.put("PatronSearchView", currentScene);
+		}
+
+		swapToView(currentScene);
+	}
+
+	public void ShowPatronCollectionView() {
+		Scene currentScene = myViews.get("PatronCollectionView");
+		System.out.println("PatronCollectionView - PatronCollection.java");
+		if (currentScene == null) {
+			// create our initial view
+			View newView = ViewFactory.createView("PatronCollectionView", this); // USE VIEW FACTORY
+			currentScene = new Scene(newView);
+			myViews.put("PatronCollectionView", currentScene);
 		}
 
 		swapToView(currentScene);

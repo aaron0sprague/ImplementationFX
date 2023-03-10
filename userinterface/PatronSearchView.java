@@ -131,6 +131,7 @@ public class PatronSearchView extends View {
         // } else {
         myModel.stateChangeRequest("SearchPatrons", zipEntered);
         // }
+        System.out.println("In Bcview: getting entry table model values");
     }
 
     /**

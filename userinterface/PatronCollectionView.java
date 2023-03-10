@@ -40,7 +40,7 @@ public class PatronCollectionView extends View {
     // --------------------------------------------------------------------------
     public PatronCollectionView(IModel wsc) {
         super(wsc, "PatronCollectionView");
-
+        System.out.println("In Bcview: patron collection view");
         // create a container for showing the contents
         VBox container = new VBox(10);
         container.setPadding(new Insets(15, 5, 5, 5));

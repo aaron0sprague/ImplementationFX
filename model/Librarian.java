@@ -133,15 +133,22 @@ public class Librarian implements IView, IModel
     }
 
     private void searchPatrons(String zip) {
+        System.out.println("In Bcview: searchPatrons - Librarian.java");
         PatronCollection patronList = new PatronCollection();
         patronList.subscribe("CancelTransaction", this);
         patronList.subscribe("SearchPatronView", this);
         if (zip.equals("")) {
+            System.out.println("In Bcview: findAllPatrons - Libraarian.java" +
+                    "sends to PatronCollection.findAllPatron");
             patronList.findAllPatrons();
         } else {
+            System.out.println("findPatronAtZipCode - Libraarian.java" +
+                    "sends to PatronCollection.findAllPatronAtZipCode");
             patronList.findPatronsAtZipCode(zip);
         }
-        patronList.createAndShowPatronCollectionView();
+        System.out.println("In Bcview: createPatroncollectionView - Libraarian.java" +
+                "sends to PatronCollection.createPatronCollectionView");
+        patronList.ShowPatronCollectionView();
     }
 
     private void createAndShowLibrarianView() {
@@ -175,6 +182,8 @@ public class Librarian implements IView, IModel
     private void createAndShowPatronSearchView() {
         Scene currentScene = myViews.get("PatronSearchView");
 
+        System.out.println("In Bcview: creatandshowpatronview - Libraarian.java" +
+                "sends to Patronsearchview test");
         if (currentScene == null) {
             // create our initial view
             View newView = ViewFactory.createView("PatronSearchView", this); // USE VIEW FACTORY
